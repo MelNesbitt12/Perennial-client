@@ -9,6 +9,11 @@ import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 
+import Renewal from '../Renewal/Renewal'
+import Renewals from '../Renewal/Renewals'
+import RenewalCreate from '../Renewal/RenewalCreate'
+import RenewalUpdate from '../Renewal/RenewalUpdate'
+
 class App extends Component {
   constructor () {
     super()
@@ -42,6 +47,7 @@ class App extends Component {
           />
         ))}
         <main className="container">
+          {/* Authentication Routes */}
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
@@ -53,6 +59,20 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
+          )} />
+
+          {/* Renewal Routes */}
+          <AuthenticatedRoute user={user} exact path='/renewals' render={() => (
+            <Renewals msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/renewals/:id' render={({ match }) => (
+            <Renewal user={user} match={match} />
+          )} />
+          <AuthenticatedRoute user={user} path='/renewals-create' render={({ match }) => (
+            <RenewalCreate user={user} match={match} />
+          )} />
+          <AuthenticatedRoute user={user} path='/renewals/:id/update' render={({ match }) => (
+            <RenewalUpdate user={user} match={match} />
           )} />
         </main>
       </Fragment>
