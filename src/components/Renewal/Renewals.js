@@ -63,13 +63,13 @@ class Renewals extends Component {
       const year = date.getFullYear()
       const month = (date.getMonth() + 1).toString()
       const day = date.getDate()
-      const fullDate = month + '/' + day + '/' + year
+      const getFullDate = month + '/' + day + '/' + year
       return (
         <li key={renewal._id}>
           <Link to={`/renewals/${renewal._id}`}>
             {renewal.name}
           </Link><br/>
-          <p>Expiration: {fullDate}</p>
+          <p>Expiration: {getFullDate}</p>
         </li>
       )
     })
