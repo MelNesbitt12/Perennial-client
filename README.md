@@ -84,7 +84,7 @@ Developers should run these often!
 ## Images
 
 ## Wireframes:
-[Perennial Authentication Page](https://imgur.com/a/Ghm1qyk)
-[Perennial Main Page](https://imgur.com/a/Wt4OxzE)
-[Perennial Create/Update Form](https://imgur.com/a/eGwyIrM)
-[Perennial Show One Renewal](https://imgur.com/a/edskC2Z)
+- [Perennial Authentication Page](https://imgur.com/a/Ghm1qyk)
+- [Perennial Main Page](https://imgur.com/a/Wt4OxzE)
+- [Perennial Create/Update Form](https://imgur.com/a/eGwyIrM)
+- [Perennial Show One Renewal](https://imgur.com/a/edskC2Z)
