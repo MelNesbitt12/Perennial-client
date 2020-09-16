@@ -66,13 +66,13 @@ class App extends Component {
             <Renewals msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} exact path='/renewals/:id' render={({ match }) => (
-            <Renewal user={user} match={match} />
+            <Renewal msgAlert={this.msgAlert} user={user} match={match} />
           )} />
           <AuthenticatedRoute user={user} path='/renewals-create' render={({ match }) => (
-            <RenewalCreate user={user} match={match} />
+            <RenewalCreate user={user} match={match} msgAlert={this.alert}/>
           )} />
           <AuthenticatedRoute user={user} path='/renewals/:id/update' render={({ match }) => (
-            <RenewalUpdate user={user} match={match} />
+            <RenewalUpdate user={user} match={match} msgAlert={this.alert}/>
           )} />
         </main>
       </Fragment>
