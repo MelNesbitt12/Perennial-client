@@ -107,21 +107,19 @@ class Renewal extends Component {
     const year = date.getFullYear()
     const month = (date.getMonth() + 1).toString()
     const day = date.getDate()
-    const fullDate = month + '/' + day + '/' + year
+    const getFullDate = month + '/' + day + '/' + year
 
     return (
       <div className="renewal">
         <h2>{renewal.name}</h2><br/>
         <p> </p>
         <p>Type: {renewal.type}</p>
-        <p>Expiration: {fullDate}</p>
+        <p>Expiration: {getFullDate}</p>
         <p>Days Until Expiration: </p>
+        <p>Cost to Renew: ${renewal.cost}</p>
         <p>Link to Renew: {renewal.url} </p>
-        <button onClick={this.handleClick}>Edit</button>
+        <button onClick={this.handleClick}>Update</button>
         <button onClick={this.deleteRenewal}>Delete</button><br/>
-        {/* <Link to={`/items/${this.props.match.params.id}/update`}>
-          <button>Update</button>
-        </Link> */}
         <p></p><br/>
         <Link to='/renewals'>Back To Your Renewals List 📋</Link>
       </div>
