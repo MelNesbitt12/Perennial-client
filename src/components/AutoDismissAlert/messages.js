@@ -8,5 +8,9 @@ export default {
   changePasswordFailure: 'Failed to change passwords. Check your old password and try again.',
   indexRenewalSuccess: 'Here Are Your Subscriptions!',
   indexRenewalFailure: 'Failed to Load Renewals',
-  inventoryEmpty: 'You Have Not Logged Any Subscriptions.'
+  inventoryEmpty: 'You Have Not Logged Any Subscriptions.',
+  deleteRenewalSuccess: 'Removed From Your List!',
+  deleteRenewalFailure: 'Delete Renewal Failed!',
+  showRenewalSuccess: 'Here Is Your Renewal!',
+  showRenewalFailure: 'Cannot View Your Renewal'
 }
