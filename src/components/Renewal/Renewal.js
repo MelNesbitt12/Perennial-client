@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import apiUrl from '../../apiConfig'
 import messages from '../AutoDismissAlert/messages'
+import Card from 'react-bootstrap/Card'
 
 import axios from 'axios'
 
@@ -111,17 +112,21 @@ class Renewal extends Component {
 
     return (
       <div className="renewal">
-        <h2>{renewal.name}</h2><br/>
-        <p> </p>
-        <p>Type: {renewal.type}</p>
-        <p>Expiration: {getFullDate}</p>
-        <p>Days Until Expiration: </p>
-        <p>Cost to Renew: ${renewal.cost}</p>
-        <p>Link to Renew: {renewal.url} </p>
-        <button onClick={this.handleClick}>Update</button>
-        <button onClick={this.deleteRenewal}>Delete</button><br/>
-        <p></p><br/>
-        <Link to='/renewals'>Back To Your Renewals List 📋</Link>
+        <Card border="info" style={{ width: '30rem', margin: 'auto', textAlign: 'center' }}>
+          <Card.Body>
+            <Card.Title>{renewal.name}</Card.Title><br/>
+            <p> </p>
+            <p>Type: {renewal.type}</p>
+            <p>Expiration: {getFullDate}</p>
+            <p>Days Until Expiration: </p>
+            <p>Cost to Renew: ${renewal.cost}</p>
+            <p>Link to Renew: {renewal.url} </p>
+            <button onClick={this.handleClick}>Update</button>
+            <button onClick={this.deleteRenewal}>Delete</button><br/>
+            <p></p><br/>
+            <Link to='/renewals'>Back To Your Renewals List 📋</Link>
+          </Card.Body>
+        </Card>
       </div>
     )
   }
