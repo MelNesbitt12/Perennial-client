@@ -3,6 +3,7 @@ import { Link, Redirect } from 'react-router-dom'
 import apiUrl from '../../apiConfig'
 import messages from '../AutoDismissAlert/messages'
 import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 import axios from 'axios'
 
@@ -97,34 +98,42 @@ class Renewal extends Component {
       return <Redirect to={{ pathname: '/renewals-create' }} />
     }
 
-    // const currentDate = new Date()
-    // const currDay = currentDate.getDate()
-    // const currMonth = currentDate.getMonth()
-    // const currYear = currentDate.getYear()
-    // const todaysDate = (currMonth + '/' + currDay + '/' + currYear)
-    // console.log(todaysDate)
-
+    // formatting expiration date
     const date = new Date(renewal.date)
     const year = date.getFullYear()
     const month = (date.getMonth() + 1).toString()
     const day = date.getDate()
     const getFullDate = month + '/' + day + '/' + year
 
+    // counting down days until expiration
+    const expireDate = new Date(renewal.date).getTime()
+    console.log(expireDate)
+    const x = setInterval(function () {
+      const now = new Date().getTime()
+      // Find the distance between now and the count down date
+      const distance = expireDate - now
+      // Day calculation
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24))
+      if (distance < 0) {
+        clearInterval(x)
+      }
+      return days
+    }, 1000)
+
     return (
       <div className="renewal">
         <Card border="info" style={{ width: '30rem', margin: 'auto', textAlign: 'center' }}>
           <Card.Body>
-            <Card.Title>{renewal.name}</Card.Title><br/>
-            <p> </p>
+            <Card.Title style={{ textAlign: 'center', fontSize: '25px' }}>{renewal.name}</Card.Title><br/>
             <p>Type: {renewal.type}</p>
             <p>Expiration: {getFullDate}</p>
-            <p>Days Until Expiration: </p>
+            <p>Days Until Expiration: {x}</p>
             <p>Cost to Renew: ${renewal.cost}</p>
             <p>Link to Renew: {renewal.url} </p>
-            <button onClick={this.handleClick}>Update</button>
-            <button onClick={this.deleteRenewal}>Delete</button><br/>
+            <Button className="submit-btn" variant="outline-info" onClick={this.handleClick}>Update</Button>
+            <Button className="submit-btn" variant="outline-info" onClick={this.deleteRenewal}>Delete</Button><br/>
             <p></p><br/>
-            <Link to='/renewals'>Back To Your Renewals List 📋</Link>
+            <Link to='/renewals'>Back To Your Renewals List 🌻</Link>
           </Card.Body>
         </Card>
       </div>

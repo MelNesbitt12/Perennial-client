@@ -25,9 +25,9 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar bg="primary" variant="dark" expand="md">
-    <Navbar.Brand href="#">
-      Perennial: Your Renewal Tracker App 📝
+  <Navbar className="navbar" bg="transparent" variant="light" expand="md" style={{ fontSize: '20px' }}>
+    <Navbar.Brand style={{ fontSize: '25px' }} href="#">
+      Perennial
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">

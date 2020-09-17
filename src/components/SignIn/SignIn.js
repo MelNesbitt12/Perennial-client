@@ -55,7 +55,7 @@ class SignIn extends Component {
           <Form onSubmit={this.onSignIn}>
             <Form.Group controlId="username">
               <Form.Label>Username</Form.Label>
-              <Form.Control
+              <Form.Control className="input"
                 required
                 type="username"
                 name="username"
@@ -66,7 +66,7 @@ class SignIn extends Component {
             </Form.Group>
             <Form.Group controlId="password">
               <Form.Label>Password</Form.Label>
-              <Form.Control
+              <Form.Control className="input"
                 required
                 name="password"
                 value={password}
@@ -75,8 +75,8 @@ class SignIn extends Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
-            <Button
-              variant="primary"
+            <Button className="submit-btn"
+              variant="outline-info"
               type="submit"
             >
               Submit
