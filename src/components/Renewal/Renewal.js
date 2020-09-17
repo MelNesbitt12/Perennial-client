@@ -105,35 +105,22 @@ class Renewal extends Component {
     const day = date.getDate()
     const getFullDate = month + '/' + day + '/' + year
 
-    // counting down days until expiration
-    const expireDate = new Date(renewal.date).getTime()
-    console.log(expireDate)
-    const x = setInterval(function () {
-      const now = new Date().getTime()
-      // Find the distance between now and the count down date
-      const distance = expireDate - now
-      // Day calculation
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24))
-      if (distance < 0) {
-        clearInterval(x)
-      }
-      return days
-    }, 1000)
-
     return (
       <div className="renewal">
         <Card border="info" style={{ width: '30rem', margin: 'auto', textAlign: 'center' }}>
+          <Card.Img variant="top" src="../../src/renew.png" />
           <Card.Body>
             <Card.Title style={{ textAlign: 'center', fontSize: '25px' }}>{renewal.name}</Card.Title><br/>
             <p>Type: {renewal.type}</p>
             <p>Expiration: {getFullDate}</p>
-            <p>Days Until Expiration: {x}</p>
+            <p>Days Until Expiration: {renewal.needsRenew}</p>
             <p>Cost to Renew: ${renewal.cost}</p>
             <p>Link to Renew: {renewal.url} </p>
+            <p>Instructions: {renewal.instructions}</p>
             <Button className="submit-btn" variant="outline-info" onClick={this.handleClick}>Update</Button>
             <Button className="submit-btn" variant="outline-info" onClick={this.deleteRenewal}>Delete</Button><br/>
             <p></p><br/>
-            <Link to='/renewals'>Back To Your Renewals List 🌻</Link>
+            <Link to='/renewals' style={{ fontSize: '20px' }}>Back To Your Renewals List 🌻</Link>
           </Card.Body>
         </Card>
       </div>

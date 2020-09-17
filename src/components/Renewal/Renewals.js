@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import CardGroup from 'react-bootstrap/CardGroup'
+import CardDeck from 'react-bootstrap/CardDeck'
 import Card from 'react-bootstrap/Card'
 
 import apiUrl from '../../apiConfig'
@@ -60,6 +60,7 @@ class Renewals extends Component {
   }
 
   render () {
+    console.log('this is the renewals in ', this.state.renewals)
     const renewals = this.state.renewals.map(renewal => {
       const date = new Date(renewal.date)
       const year = date.getFullYear()
@@ -69,7 +70,7 @@ class Renewals extends Component {
 
       return (
         <div key={renewal._id}>
-          <Card style={{ width: '18rem', margin: 'auto', textAlign: 'center' }} >
+          <Card style={{ width: '18rem', margin: 'auto', textAlign: 'center', fontSize: '20px' }} >
             <Card.Body>
               <Link to={`/renewals/${renewal._id}`}>
                 {renewal.name}
@@ -83,8 +84,8 @@ class Renewals extends Component {
 
     return (
       <div className="renewals">
-        <CardGroup style={{ width: '30rem', margin: 'auto' }}>
-          <Card>
+        <CardDeck style={{ width: '30rem', margin: 'auto' }}>
+          <Card style={{ width: '30rem', margin: 'auto', borderRadius: '35px', padding: '10px' }}>
             <Card.Body>
               <Card.Title style={{ textAlign: 'center' }}>Renewals</Card.Title><br/>
               {renewals}
@@ -93,7 +94,7 @@ class Renewals extends Component {
               <small className="text-muted">Perennial Renewal Tracker</small>
             </Card.Footer>
           </Card>
-        </CardGroup>
+        </CardDeck>
       </div>
     )
   }

@@ -13,6 +13,8 @@ import Renewal from '../Renewal/Renewal'
 import Renewals from '../Renewal/Renewals'
 import RenewalCreate from '../Renewal/RenewalCreate'
 import RenewalUpdate from '../Renewal/RenewalUpdate'
+import GettingStarted from '../Renewal/GettingStarted'
+// import Homepage from '../Renewal/Home'
 
 class App extends Component {
   constructor () {
@@ -62,6 +64,9 @@ class App extends Component {
           )} />
 
           {/* Renewal Routes */}
+          <AuthenticatedRoute user={user} exact path='/how-to' render={() => (
+            <GettingStarted user={user} />
+          )} />
           <AuthenticatedRoute user={user} exact path='/renewals' render={() => (
             <Renewals msgAlert={this.msgAlert} user={user} />
           )} />
