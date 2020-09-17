@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import CardGroup from 'react-bootstrap/CardGroup'
+import Card from 'react-bootstrap/Card'
 
 import apiUrl from '../../apiConfig'
 import messages from '../AutoDismissAlert/messages'
@@ -65,23 +67,36 @@ class Renewals extends Component {
       const day = date.getDate()
       const getFullDate = month + '/' + day + '/' + year
       return (
-        <li key={renewal._id}>
-          <Link to={`/renewals/${renewal._id}`}>
-            {renewal.name}
-          </Link><br/>
-          <p>Expiration: {getFullDate}</p>
-        </li>
+        <div key={renewal._id}>
+          <Card style={{ width: '18rem', margin: 'auto' }} >
+            <Card.Body>
+              <Link to={`/renewals/${renewal._id}`}>
+                {renewal.name}
+              </Link><br/>
+              <p>Expiration: {getFullDate}</p>
+            </Card.Body>
+          </Card>
+        </div>
       )
     })
 
     return (
       <div className="renewals">
-        <h2>Renewals</h2><br/>
-        <p> </p>
-        <p> </p>
-        <ul>
-          {renewals}
-        </ul>
+        <CardGroup style={{ width: '30rem', margin: 'auto' }}>
+          <Card>
+            <Card.Body>
+              <Card.Title style={{ textAlign: 'center' }}>Renewals</Card.Title><br/>
+              <Card.Text>
+                <div>
+                  {renewals}
+                </div>
+              </Card.Text>
+            </Card.Body>
+            <Card.Footer>
+              <small className="text-muted">Perennial Renewal Tracker</small>
+            </Card.Footer>
+          </Card>
+        </CardGroup>
       </div>
     )
   }
