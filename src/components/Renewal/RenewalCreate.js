@@ -15,7 +15,8 @@ class RenewalCreate extends Component {
         type: '',
         date: '',
         cost: '',
-        url: ''
+        url: '',
+        instructions: ''
       },
       createdId: null,
       updated: false

@@ -11,7 +11,7 @@ const RenewalForm = ({ renewal, handleSubmit, handleChange, cancelPath }) => (
         <h2>Renewal</h2><br/>
         <p> </p>
         <Form.Label style={{ fontSize: '20px' }}>Type</Form.Label>
-        <Form.Control className="input" as="select" value={renewal.type} name='type' onChange={handleChange}>
+        <Form.Control className="form-control z-depth-1 input" as="select" value={renewal.type} name='type' onChange={handleChange}>
           <option>Choose from the following:</option>
           <option>Weekly</option>
           <option>Monthly</option>
@@ -20,19 +20,23 @@ const RenewalForm = ({ renewal, handleSubmit, handleChange, cancelPath }) => (
       </Form.Group>
       <Form.Group controlId="exampleForm.ControlSelect2">
         <Form.Label style={{ fontSize: '20px' }}>Name</Form.Label>
-        <Form.Control type="text" placeholder="Name of subscription, service, etc." value={renewal.name} name='name' onChange={handleChange} />
+        <Form.Control className="form-control z-depth-1" type="text" placeholder="Name of subscription, service, etc." value={renewal.name} name='name' onChange={handleChange} />
       </Form.Group>
       <Form.Group controlId="exampleForm.ControlSelect3">
         <Form.Label style={{ fontSize: '20px' }}>Expiration Date: </Form.Label>
-        <Form.Control type="date" value={renewal.date} name='date' onChange={handleChange}/>
+        <Form.Control className="form-control z-depth-1" type="date" value={renewal.date} name='date' onChange={handleChange}/>
       </Form.Group>
       <Form.Group controlId="exampleForm.ControlSelect5">
         <Form.Label style={{ fontSize: '20px' }}>Cost</Form.Label>
-        <Form.Control type="number" placeholder="Ex: 50.00" value={renewal.cost} name='cost' onChange={handleChange} />
+        <Form.Control className="form-control z-depth-1" type="number" placeholder="Ex: 50.00" value={renewal.cost} name='cost' onChange={handleChange} />
       </Form.Group>
       <Form.Group controlId="exampleForm.ControlSelect4">
         <Form.Label style={{ fontSize: '20px' }}>Link to Renew:</Form.Label>
-        <Form.Control type="url" placeholder="Add link here" value={renewal.url} name='url' onChange={handleChange}/>
+        <Form.Control className="form-control z-depth-1" type="text" placeholder="Add link here" value={renewal.url} name='url' onChange={handleChange}/>
+      </Form.Group>
+      <Form.Group controlId="exampleForm.ControlSelect6">
+        <Form.Label style={{ fontSize: '20px' }}>Instructions:</Form.Label>
+        <textarea className="form-control z-depth-1" rows="3" placeholder="How can you renew?" value={renewal.instructions} name='instructions' onChange={handleChange}></textarea>
       </Form.Group>
       <Button className="submit-btn" type='submit' variant="outline-info">Submit</Button>
       <Link to={cancelPath}>
