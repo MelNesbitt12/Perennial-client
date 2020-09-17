@@ -66,14 +66,15 @@ class Renewals extends Component {
       const month = (date.getMonth() + 1).toString()
       const day = date.getDate()
       const getFullDate = month + '/' + day + '/' + year
+
       return (
         <div key={renewal._id}>
-          <Card style={{ width: '18rem', margin: 'auto' }} >
+          <Card style={{ width: '18rem', margin: 'auto', textAlign: 'center' }} >
             <Card.Body>
               <Link to={`/renewals/${renewal._id}`}>
                 {renewal.name}
               </Link><br/>
-              <p>Expiration: {getFullDate}</p>
+              Expiration: {getFullDate}
             </Card.Body>
           </Card>
         </div>
@@ -86,11 +87,7 @@ class Renewals extends Component {
           <Card>
             <Card.Body>
               <Card.Title style={{ textAlign: 'center' }}>Renewals</Card.Title><br/>
-              <Card.Text>
-                <div>
-                  {renewals}
-                </div>
-              </Card.Text>
+              {renewals}
             </Card.Body>
             <Card.Footer>
               <small className="text-muted">Perennial Renewal Tracker</small>

@@ -57,7 +57,7 @@ class SignUp extends Component {
           <Form onSubmit={this.onSignUp}>
             <Form.Group controlId="username">
               <Form.Label>Username</Form.Label>
-              <Form.Control
+              <Form.Control className="input"
                 required
                 name="username"
                 value={username}
@@ -68,7 +68,7 @@ class SignUp extends Component {
             </Form.Group>
             <Form.Group controlId="email">
               <Form.Label>Email address</Form.Label>
-              <Form.Control
+              <Form.Control className="input"
                 required
                 type="email"
                 name="email"
@@ -79,7 +79,7 @@ class SignUp extends Component {
             </Form.Group>
             <Form.Group controlId="password">
               <Form.Label>Password</Form.Label>
-              <Form.Control
+              <Form.Control className="input"
                 required
                 name="password"
                 value={password}
@@ -90,7 +90,7 @@ class SignUp extends Component {
             </Form.Group>
             <Form.Group controlId="passwordConfirmation">
               <Form.Label>Password Confirmation</Form.Label>
-              <Form.Control
+              <Form.Control className="input"
                 required
                 name="passwordConfirmation"
                 value={passwordConfirmation}
@@ -99,8 +99,8 @@ class SignUp extends Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
-            <Button
-              variant="primary"
+            <Button className="submit-btn"
+              variant="outline-info"
               type="submit"
             >
               Submit

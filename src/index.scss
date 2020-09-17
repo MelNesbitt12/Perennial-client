@@ -1,5 +1,64 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
+  background-image: url('13-132739_sunflower-cartoon-15-buy-clip-art-twin-to.png');
+  background-position: fixed;
+  background-repeat: no-repeat;
+  background-size: 25%;
   font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+  font-size: 20px;
+}
+
+.row {
+  color: #459342;
+  border-radius: 60px;
+  clear: both;
+  cursor: pointer;
+  height: 400px;
+  justify-content: center;
+  padding: 40px;
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  border: 2px lighter;
+  border-radius: 30px;
+  box-sizing: border-box;
+  font-size: 20px;
+  margin-bottom: 20px;
+  outline: none;
+  padding: 8px;
+  transition: .5s ease;
+  width: 375px;
+}
+
+.submit-btn {
+  border: 0;
+  border-radius: 70px;
+  border-width: thin;
+  font-size: 25px;
+  text-align: center;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  font-size: 25px;
+  padding: 5px;
+  margin-bottom: 5px;
 }
