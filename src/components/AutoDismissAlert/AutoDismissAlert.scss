@@ -1,8 +1,11 @@
 .alert {
   align-items: center;
-  animation: .5s ease-in-out 0s 1 light-bounce-in;
+  animation: 1.5s ease-in-out 0s 1 light-bounce-in;
+  background-color: #FFF5C3;
   bottom: 1rem;
+  color: #459342;
   display: flex;
+  font-weight: bolder;
   left: 0;
   margin: auto;
   max-width: 30rem;
@@ -24,16 +27,28 @@
 
 @keyframes light-bounce-in {
   0% {
+    transform: scale(0.1);
     opacity: 0;
-    transform: translateY(20%);
   }
-
-  50% {
-    transform: translateY(-5%);
-  }
-
-  100% {
+  60% {
+    transform: scale(1.2);
     opacity: 1;
-    transform: translateY(0%);
+  }
+  100% {
+    transform: scale(1);
   }
 }
+//   0% {
+//     opacity: 0;
+//     transform: translateY(20%);
+//   }
+//
+//   50% {
+//     transform: translateY(-5%);
+//   }
+//
+//   100% {
+//     opacity: 1;
+//     transform: translateY(0%);
+//   }
+// }

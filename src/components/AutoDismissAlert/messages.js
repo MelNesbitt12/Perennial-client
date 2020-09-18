@@ -13,5 +13,5 @@ export default {
   deleteRenewalFailure: 'Delete Renewal Failed!',
   showRenewalSuccess: 'Here Is Your Renewal!',
   showRenewalFailure: 'Cannot View Your Renewal',
-  updateRenewalFailure: 'Make Sure You Fill Out All Fields'
+  updateRenewalFailure: 'Complete the Form Before You Submit'
 }
