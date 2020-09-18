@@ -76,15 +76,6 @@ class RenewalCreate extends Component {
         }
       })
       .catch(console.error)
-      // => {
-      //   if (error.response.status === 420) {
-      //     return msgAlert({
-      //       heading: 'You can\'t have negative values 😱',
-      //       message: messages.updateItemFailure,
-      //       variant: 'danger'
-      //     })
-      //   }
-      // })
   }
 
   render () {
