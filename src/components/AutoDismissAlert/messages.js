@@ -12,5 +12,6 @@ export default {
   deleteRenewalSuccess: 'Removed From Your List!',
   deleteRenewalFailure: 'Delete Renewal Failed!',
   showRenewalSuccess: 'Here Is Your Renewal!',
-  showRenewalFailure: 'Cannot View Your Renewal'
+  showRenewalFailure: 'Cannot View Your Renewal',
+  updateRenewalFailure: 'Make Sure You Fill Out All Fields'
 }

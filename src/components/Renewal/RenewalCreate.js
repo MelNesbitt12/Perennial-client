@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom'
 import RenewalForm from './RenewalForm'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
-// import messages from '../AutoDismissAlert/messages'
+import messages from '../AutoDismissAlert/messages'
 
 class RenewalCreate extends Component {
   constructor (props) {
@@ -36,7 +36,8 @@ class RenewalCreate extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    // const { msgAlert } = this.props
+    const { msgAlert } = this.props
+    console.log(msgAlert)
     axios({
       url: `${apiUrl}/renewals`,
       method: 'GET',
@@ -75,7 +76,15 @@ class RenewalCreate extends Component {
           this.setState({ updated: true })
         }
       })
-      .catch(console.error)
+      .catch((error) => {
+        if (error.response.status === 422) {
+          return msgAlert({
+            heading: 'All Fields Required!',
+            message: messages.updateRenewalFailure,
+            variant: 'danger'
+          })
+        }
+      })
   }
 
   render () {

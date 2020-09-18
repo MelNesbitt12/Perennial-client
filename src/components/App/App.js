@@ -77,7 +77,7 @@ class App extends Component {
             <Renewal msgAlert={this.msgAlert} user={user} match={match} />
           )} />
           <AuthenticatedRoute user={user} path='/renewals-create' render={({ match }) => (
-            <RenewalCreate user={user} match={match} msgAlert={this.alert}/>
+            <RenewalCreate user={user} match={match} msgAlert={this.msgAlert}/>
           )} />
           <AuthenticatedRoute user={user} path='/renewals/:id/update' render={({ match }) => (
             <RenewalUpdate user={user} match={match} msgAlert={this.alert}/>
