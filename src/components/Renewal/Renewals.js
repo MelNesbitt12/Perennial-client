@@ -60,7 +60,6 @@ class Renewals extends Component {
   }
 
   render () {
-    console.log('this is the renewals in ', this.state.renewals)
     const renewals = this.state.renewals.map(renewal => {
       const date = new Date(renewal.date)
       const year = date.getFullYear()

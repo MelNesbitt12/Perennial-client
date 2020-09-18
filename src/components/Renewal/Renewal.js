@@ -108,7 +108,7 @@ class Renewal extends Component {
     return (
       <div className="renewal">
         <Card border="info" style={{ width: '30rem', margin: 'auto', textAlign: 'center' }}>
-          <Card.Img variant="top" src="../../src/renew.png" />
+          <img className="card-img-top" src="../../renew.png" style={{ width: '10rem' }}></img>
           <Card.Body>
             <Card.Title style={{ textAlign: 'center', fontSize: '25px' }}>{renewal.name}</Card.Title><br/>
             <p>Type: {renewal.type}</p>
