@@ -37,7 +37,6 @@ class RenewalCreate extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     const { msgAlert } = this.props
-    console.log(msgAlert)
     axios({
       url: `${apiUrl}/renewals`,
       method: 'GET',
