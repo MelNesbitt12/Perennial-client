@@ -64,7 +64,6 @@ class App extends Component {
           )} />
 
           {/* Renewal Routes */}
-          <AuthenticatedRoute user={user} path='/'/>
           <AuthenticatedRoute user={user} exact path='/profile' render={() => (
             <Profile user={user} />
           )} />
