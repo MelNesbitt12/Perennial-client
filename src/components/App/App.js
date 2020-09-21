@@ -67,7 +67,10 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/profile' render={() => (
             <Profile user={user} />
           )} />
-          <AuthenticatedRoute user={user} exact path='/how-to' render={() => (
+          {/* <AuthenticatedRoute user={user} exact path='/how-to' render={() => (
+            <GettingStarted user={user} />
+          )} /> */}
+          <AuthenticatedRoute user={user} exact path='/' render={() => (
             <GettingStarted user={user} />
           )} />
           <AuthenticatedRoute user={user} exact path='/renewals' render={() => (
