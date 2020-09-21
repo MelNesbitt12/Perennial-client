@@ -6,7 +6,7 @@ const authenticatedOptions = (
   <Fragment>
     {/* <Nav.Link href="#">Home</Nav.Link > */}
     <Nav.Link href="#profile">Profile</Nav.Link>
-    <Nav.Link href="#how-to">Getting Started</Nav.Link>
+    {/* <Nav.Link href="#how-to">Getting Started</Nav.Link> */}
     <Nav.Link href="#renewals">Your Renewals</Nav.Link>
     <Nav.Link href="#renewals-create">Add Renewal</Nav.Link>
     <Nav.Link href="#change-password">Change Password</Nav.Link>
