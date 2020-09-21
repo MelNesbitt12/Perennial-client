@@ -20,7 +20,7 @@ class Welcome extends Component {
         </ol><br/>
         <div style={{ fontSize: '20px' }}> Happy Renewing!</div>
         <p>
-          <Button className="submit-btn" variant="outline-info" href='/#/'>Ready!</Button>
+          <Button className="submit-btn" variant="outline-info" href='#'>Ready!</Button>
         </p>
       </Jumbotron>
     )
