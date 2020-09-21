@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Button from 'react-bootstrap/Button'
 
+// Welcome component to render app information upon sign-in
 class Welcome extends Component {
   state = {
   }

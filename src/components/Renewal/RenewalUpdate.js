@@ -57,7 +57,7 @@ class RenewalUpdate extends Component {
     const { renewal, updated } = this.state
     const { handleChange, handleSubmit } = this
 
-    // when the user hits submit to finish editing the book
+    // when the user hits submit to finish editing the renewal
     if (updated) {
       // redirect to the show page (route)
       return <Redirect to={`/renewals/${this.props.match.params.id}`} />

@@ -16,6 +16,7 @@ import RenewalUpdate from '../Renewal/RenewalUpdate'
 import GettingStarted from '../Renewal/GettingStarted'
 import Profile from '../Renewal/Profile'
 
+// App component to store state
 class App extends Component {
   constructor () {
     super()
@@ -25,11 +26,11 @@ class App extends Component {
       msgAlerts: []
     }
   }
-
+  // setting the user post-authentication using function setUser and passing user in as props
   setUser = user => this.setState({ user })
-
+  // clearing the user using function clearUser and setting user state to null
   clearUser = () => this.setState({ user: null })
-
+  // msgAlert function deconstructs heading, message and variant from AutoDismissAlert to be used for specific success and failure messaging within each component
   msgAlert = ({ heading, message, variant }) => {
     this.setState({ msgAlerts: [...this.state.msgAlerts, { heading, message, variant }] })
   }
@@ -49,7 +50,7 @@ class App extends Component {
           />
         ))}
         <main className="container">
-          {/* Authentication Routes */}
+          {/* Authenticated Routes */}
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
