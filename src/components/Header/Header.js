@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar'
 
 const authenticatedOptions = (
   <Fragment>
+    <Nav.Link href="/#/">Home</Nav.Link>
     <Nav.Link href="#profile">Profile</Nav.Link>
     <Nav.Link href="#how-to">Getting Started</Nav.Link>
     <Nav.Link href="#renewals">Your Renewals</Nav.Link>
@@ -20,11 +21,11 @@ const unauthenticatedOptions = (
   </Fragment>
 )
 
-const alwaysOptions = (
-  <Fragment>
-    <Nav.Link href="/#/">Home</Nav.Link>
-  </Fragment>
-)
+// const alwaysOptions = (
+//   <Fragment>
+//     <Nav.Link href="/#/">Home</Nav.Link>
+//   </Fragment>
+// )
 
 const Header = ({ user }) => (
   <Navbar className="navbar" bg="transparent" variant="light" expand="md" style={{ fontSize: '20px' }}>
