@@ -54,28 +54,6 @@ Styling came last - for this project, I wanted to continue to practice using Boo
 | `npm test`             | Runs automated tests.                                                                                       |
 | `npm run debug-server` | Starts the server in debug mode, which will print lots of extra info about what's happening inside the app. |
 
-
-### Authentication
-
-| Verb   | URI Pattern            | Controller#Action |
-|--------|------------------------|-------------------|
-| POST   | `/sign-up`             | `users#signup`    |
-| POST   | `/sign-in`             | `users#signin`    |
-| PATCH  | `/change-password/`    | `users#changepw`  |
-| DELETE | `/sign-out/`           | `users#signout`   |
-
-### Authentication
-
-| Verb   | URI Pattern            | Controller#Action |
-|--------|------------------------|-------------------|
-| GET    | `/renewals`            | `renewals#index`  |
-| GET    | `/renewals/:id`        | `renewal#show`    |
-| POST   | `/renewals/create-renewal`| `renewal#create`|
-| PATCH  | `/renewals/:id/update` | `renewal#update`  |
-| DELETE | `/renewals/:id`        | `renewal#delete`  |
-
-## Tasks
-
 Developers should run these often!
 
 - `npm run nag`: runs code quality analysis tools on your code and complains.
@@ -86,13 +64,33 @@ Developers should run these often!
     them
 - `npm run deploy`: builds and deploys master branch
 
+### Authentication Routes
+
+| Verb   | URI Pattern            | Controller#Action |
+|--------|------------------------|-------------------|
+| POST   | `/sign-up`             | `users#signup`    |
+| POST   | `/sign-in`             | `users#signin`    |
+| PATCH  | `/change-password/`    | `users#changepw`  |
+| DELETE | `/sign-out/`           | `users#signout`   |
+
+### Resource Routes
+
+| Verb   | URI Pattern            | Controller#Action |
+|--------|------------------------|-------------------|
+| GET    | `/renewals`            | `renewals#index`  |
+| GET    | `/renewals/:id`        | `renewal#show`    |
+| POST   | `/renewals/create-renewal`| `renewal#create`|
+| PATCH  | `/renewals/:id/update` | `renewal#update`  |
+| DELETE | `/renewals/:id`        | `renewal#delete`  |
+
+
 ## Unsolved Problems:
 Version 2:
-- I would like to create a subdocument within the Renewal model for comments.
 - I want users to be able to add hyperlinks (instead of just text links) to the `URL` section of the create renewal form, so that they can click the link from the show page and be taken straight to their subscription or service renewal page
 - I want to explore bootstrap styling and have my individual resource cards lay out side-by-side instead of stacked on the index page.
 - I want to add mobile compatibility to the application.
 - I would like to adjust my User schema to include location and other pertinent information for the User's profile page.
+- I want to add an auto-renew field to the Renewal schema, that will be set to true/false.
 
 ## Images
 ![Perennial App](https://user-images.githubusercontent.com/59749085/93626999-4841fb00-f9b2-11ea-9071-871391b79d3d.png)

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
 
+// Profile component takes in User props and sets state
 class Profile extends Component {
   constructor (props) {
     super(props)
@@ -11,6 +12,7 @@ class Profile extends Component {
   }
 
   render () {
+    // Setting and formatting Account created date
     const { user } = this.state
     const date = new Date(user.createdAt)
     const year = date.getFullYear()

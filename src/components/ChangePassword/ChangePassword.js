@@ -7,6 +7,7 @@ import messages from '../AutoDismissAlert/messages'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
+// App component to store state for user's changed password
 class ChangePassword extends Component {
   constructor () {
     super()
@@ -16,11 +17,11 @@ class ChangePassword extends Component {
       newPassword: ''
     }
   }
-
+  // upon click event, set the state based on changed values within form fields
   handleChange = event => this.setState({
     [event.target.name]: event.target.value
   })
-
+  // When user changes password, if successful, save the new password in state and send success message
   onChangePassword = event => {
     event.preventDefault()
 
@@ -33,6 +34,7 @@ class ChangePassword extends Component {
         variant: 'success'
       }))
       .then(() => history.push('/'))
+      // if change password fails, display failure message
       .catch(error => {
         this.setState({ oldPassword: '', newPassword: '' })
         msgAlert({
@@ -42,7 +44,7 @@ class ChangePassword extends Component {
         })
       })
   }
-
+  // Rendering change password form to display on the page
   render () {
     const { oldPassword, newPassword } = this.state
 

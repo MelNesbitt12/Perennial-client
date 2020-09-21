@@ -20,7 +20,9 @@ class Renewal extends Component {
       redirect: false
     }
   }
-
+  // Axios calls to show renewal based on resource Id
+  // If successful, set renewal state and return success message
+  // If unsuccessful, send error message
   componentDidMount () {
     const { msgAlert } = this.props
     axios({

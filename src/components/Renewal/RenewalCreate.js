@@ -5,6 +5,7 @@ import apiUrl from '../../apiConfig'
 import axios from 'axios'
 import messages from '../AutoDismissAlert/messages'
 
+// RenewalCreate component takes in User props and sets state to create new renewal
 class RenewalCreate extends Component {
   constructor (props) {
     super(props)

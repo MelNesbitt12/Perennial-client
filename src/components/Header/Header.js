@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 
+// Links that display in header for signed-in users only
 const authenticatedOptions = (
   <Fragment>
     {/* <Nav.Link href="#">Home</Nav.Link > */}
@@ -14,6 +15,7 @@ const authenticatedOptions = (
   </Fragment>
 )
 
+// Links that display in header for new users/users that are not yet signed in
 const unauthenticatedOptions = (
   <Fragment>
     <Nav.Link href="#sign-up">Sign Up</Nav.Link>
@@ -21,12 +23,7 @@ const unauthenticatedOptions = (
   </Fragment>
 )
 
-// const alwaysOptions = (
-//   <Fragment>
-//     <Nav.Link href="/#/">Home</Nav.Link>
-//   </Fragment>
-// )
-
+// Header where links will be displayed for authenticated and unauthenticated users
 const Header = ({ user }) => (
   <Navbar className="navbar" bg="transparent" variant="light" expand="md" style={{ fontSize: '20px' }}>
     <Navbar.Brand style={{ fontSize: '25px' }} href="#">
