@@ -63,3 +63,26 @@ body {
   padding: 5px;
   margin-bottom: 5px;
 }
+
+.renewals > .scroll {
+  bottom: 100px;
+  left: 500px;
+  overflow-y: scroll;
+  position: absolute;
+  right: 500px;
+  top: 120px;
+  width: 50%;
+}
+
+.card {
+  border-color: #459342;
+  border-style: groove;
+  border-width: thin;
+  padding: 10px;
+}
+
+.show {
+  border-color: #FFF5C3;
+  border-style: groove;
+  border-width: thick;
+}

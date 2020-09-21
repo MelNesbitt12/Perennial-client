@@ -69,7 +69,7 @@ class Renewals extends Component {
 
       return (
         <div key={renewal._id}>
-          <Card style={{ width: '18rem', margin: 'auto', textAlign: 'center', fontSize: '20px' }} >
+          <Card className="card" style={{ width: '18rem', margin: 'auto', textAlign: 'center', fontSize: '20px' }} >
             <Card.Body>
               <Link to={`/renewals/${renewal._id}`}>
                 {renewal.name}
@@ -83,8 +83,8 @@ class Renewals extends Component {
 
     return (
       <div className="renewals">
-        <CardDeck style={{ width: '30rem', margin: 'auto' }}>
-          <Card style={{ width: '30rem', margin: 'auto', borderRadius: '35px', padding: '10px' }}>
+        <CardDeck className="scroll" style={{ width: '30rem', margin: 'auto' }}>
+          <Card style={{ width: '30rem', margin: 'auto', borderRadius: '35px', padding: '10px', borderColor: '#459342' }}>
             <Card.Body>
               <Card.Title style={{ textAlign: 'center' }}>Renewals</Card.Title><br/>
               {renewals}
