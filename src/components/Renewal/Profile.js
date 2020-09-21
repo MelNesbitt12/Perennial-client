@@ -28,7 +28,7 @@ class Profile extends Component {
             {/* <p>Location: {user.address}</p> */}
             <p>Account Created: {getFullDate}</p>
             <p>More to Come Soon!</p>
-            <Link href='#' style={{ fontSize: '20px' }}>Back To Home 🌻</Link>
+            <Link to='/#/#/' style={{ fontSize: '20px' }}>Back To Home 🌻</Link>
           </Card.Body>
         </Card>
       </div>
