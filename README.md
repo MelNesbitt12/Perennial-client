@@ -86,11 +86,11 @@ Developers should run these often!
 
 ## Unsolved Problems:
 Version 2:
-- I want users to be able to add hyperlinks (instead of just text links) to the `URL` section of the create renewal form, so that they can click the link from the show page and be taken straight to their subscription or service renewal page
 - I want to explore bootstrap styling and have my individual resource cards lay out side-by-side instead of stacked on the index page.
-- I want to add mobile compatibility to the application.
+- I want to add mobile responsiveness to the application.
 - I would like to adjust my User schema to include location and other pertinent information for the User's profile page.
 - I want to add an auto-renew field to the Renewal schema, that will be set to true/false.
+- I will add a notification upon sign in, letting the user know which renewal is expiring the soonest. 
 
 ## Images
 ![Perennial App](https://user-images.githubusercontent.com/59749085/93626999-4841fb00-f9b2-11ea-9071-871391b79d3d.png)

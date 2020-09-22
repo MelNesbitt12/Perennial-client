@@ -103,7 +103,7 @@ class RenewalCreate extends Component {
           renewal={renewal}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
-          cancelPath='/'
+          cancelPath='/renewals'
         />
       </div>
     )

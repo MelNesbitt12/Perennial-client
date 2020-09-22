@@ -117,7 +117,7 @@ class Renewal extends Component {
             <p>Expiration: {getFullDate}</p>
             <p>Days Until Expiration: {renewal.needsRenew}</p>
             <p>Cost to Renew: ${renewal.cost}</p>
-            <p>Link to Renew: {renewal.url} </p>
+            <a href={renewal.url} rel="noopener noreferrer" target="_blank"> Link to Renew </a>
             <p>Instructions: {renewal.instructions}</p>
             <Button className="submit-btn" variant="outline-info" onClick={this.handleClick}>Update</Button>
             <Button className="submit-btn" variant="outline-info" onClick={this.deleteRenewal}>Delete</Button><br/>
