@@ -27,9 +27,8 @@ class Profile extends Component {
           <Card.Body>
             <Card.Title style={{ textAlign: 'center', fontSize: '25px' }}>{user.username}</Card.Title>
             <p>Email: {user.email}</p>
-            {/* <p>Location: {user.address}</p> */}
+            <p>Location: {user.location}</p>
             <p>Account Created: {getFullDate}</p>
-            <p>More to Come Soon!</p>
             <Link to='/' style={{ fontSize: '20px' }}>Back To Home 🌻</Link>
           </Card.Body>
         </Card>
