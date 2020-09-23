@@ -9,6 +9,7 @@ export const signUp = credentials => {
       credentials: {
         username: credentials.username,
         email: credentials.email,
+        location: credentials.location,
         password: credentials.password,
         password_confirmation: credentials.passwordConfirmation
       }

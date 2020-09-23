@@ -14,7 +14,7 @@ class SignUp extends Component {
     this.state = {
       username: '',
       email: '',
-      // address: '',
+      location: '',
       password: '',
       passwordConfirmation: ''
     }
@@ -43,7 +43,7 @@ class SignUp extends Component {
         this.setState({
           username: '',
           email: '',
-          // address: '',
+          location: '',
           password: '',
           passwordConfirmation: ''
         })
@@ -56,7 +56,7 @@ class SignUp extends Component {
   }
 
   render () {
-    const { username, email, password, passwordConfirmation } = this.state
+    const { username, email, location, password, passwordConfirmation } = this.state
 
     return (
       <div className="row">
@@ -85,17 +85,17 @@ class SignUp extends Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
-            {/* <Form.Group controlId="address">
+            <Form.Group controlId="address">
               <Form.Label>Location</Form.Label>
               <Form.Control className="input"
                 required
                 // type="text"
-                name="address"
-                value={address}
+                name="location"
+                value={location}
                 placeholder="Enter city and/or state"
                 onChange={this.handleChange}
               />
-            </Form.Group> */}
+            </Form.Group>
             <Form.Group controlId="password">
               <Form.Label>Password</Form.Label>
               <Form.Control className="input"
