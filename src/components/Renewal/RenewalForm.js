@@ -8,7 +8,7 @@ const RenewalForm = ({ renewal, handleSubmit, handleChange, cancelPath }) => (
   <div className="row">
     <Form onSubmit={handleSubmit}>
       <Form.Group controlId="exampleForm.ControlSelect1">
-        <h2>Renewal</h2><br/>
+        <h2 style={{ fontWeight: 'bold', margin: 'auto', textShadow: '1px 1px' }}>Renewal</h2><br/>
         <p> </p>
         <Form.Label style={{ fontSize: '20px' }}>Type</Form.Label>
         <Form.Control className="form-control z-depth-1 input" as="select" value={renewal.type} name='type' onChange={handleChange}>
