@@ -16,6 +16,7 @@ class RenewalCreate extends Component {
         type: '',
         date: '',
         cost: '',
+        autoRenew: false,
         url: '',
         instructions: ''
       },
@@ -32,6 +33,24 @@ class RenewalCreate extends Component {
 
       const editedRenewal = Object.assign({}, prevState.renewal, updatedField)
       return { renewal: editedRenewal }
+    })
+  }
+
+  handleCheck = event => {
+    event.persist()
+    console.log('event target is:', event.target)
+    console.log('event target value is:', event.target.value)
+    this.setState(prevState => {
+      const updatedField = { autoRenew: !prevState.renewal.autoRenew }
+      const editedRenewal = Object.assign({}, prevState.renewal, updatedField)
+      return { renewal: editedRenewal }
+    //   if (this.state.renewal.autoRenew === false) {
+    //     this.setState({ autoRenew: true }
+    //     )
+    //   } else {
+    //     return this.setState({ autoRenew: false })
+    //   }
+    // })
     })
   }
 
@@ -88,8 +107,8 @@ class RenewalCreate extends Component {
   }
 
   render () {
-    const { renewal, createdId, updated } = this.state
-    const { handleChange, handleSubmit } = this
+    const { createdId, updated } = this.state
+    // const { handleChange, handleSubmit, handleCheck } = this
 
     if (createdId) {
       return <Redirect to={`/renewals/${createdId}`} />
@@ -100,9 +119,10 @@ class RenewalCreate extends Component {
     return (
       <div>
         <RenewalForm
-          renewal={renewal}
-          handleChange={handleChange}
-          handleSubmit={handleSubmit}
+          renewal={this.state.renewal}
+          handleChange={this.handleChange}
+          handleCheck={this.handleCheck}
+          handleSubmit={this.handleSubmit}
           cancelPath='/renewals'
         />
       </div>
