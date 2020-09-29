@@ -117,7 +117,9 @@ class Renewal extends Component {
             <p style={{ fontSize: '20px' }}>Expiration: {getFullDate}</p>
             <p style={{ fontSize: '20px' }}>Days Until Expiration: {renewal.needsRenew}</p>
             <p style={{ fontSize: '20px' }}>Cost to Renew: ${renewal.cost}</p>
+            <p style={{ fontSize: '20px' }}> AutoRenew Enabled? <input name="autoRenew" type="checkbox" label="autoRenew" defaultChecked={renewal.autoRenew} /></p>
             <a href={renewal.url} rel="noopener noreferrer" target="_blank" style={{ fontSize: '20px' }}> Link to Renew </a>
+            <p></p>
             <p style={{ fontSize: '20px' }}>Instructions: {renewal.instructions}</p>
             <Button className="submit-btn" variant="outline-info" onClick={this.handleClick}>Update</Button>
             <Button className="submit-btn" variant="outline-info" onClick={this.deleteRenewal}>Delete</Button><br/>
