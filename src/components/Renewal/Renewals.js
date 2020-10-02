@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Nav from 'react-bootstrap/Nav'
+import Button from 'react-bootstrap/Button'
 
 import apiUrl from '../../apiConfig'
 import messages from '../AutoDismissAlert/messages'
@@ -62,6 +63,39 @@ class Renewals extends Component {
       })
   }
 
+  deleteRenewal = (renewalId) => {
+    const { msgAlert } = this.props
+    axios({
+      url: `${apiUrl}/renewals/${renewalId}`,
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${this.props.user.token}`
+      }
+    })
+      .then(() => {
+        return axios({
+          url: (`${apiUrl}/renewals`),
+          headers: {
+            'Authorization': `Bearer ${this.props.user.token}`
+          }
+        })
+      })
+      // update the `deleted` state to be `true`
+      .then((res) => this.setState({ renewals: res.data.renewals }))
+      .then(() => msgAlert({
+        heading: 'Deleted Renewal Successfully',
+        message: messages.deleteRenewalSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        msgAlert({
+          heading: 'Failed' + error.message,
+          message: messages.deleteRenewalFailure,
+          variant: 'danger'
+        })
+      })
+  }
+
   render () {
     const renewals = this.state.renewals.map(renewal => {
       const date = new Date(renewal.date)
@@ -85,6 +119,7 @@ class Renewals extends Component {
               <Card.Text sytle={{ fontSize: '25px' }}>
                 Expiration: {getFullDate}
               </Card.Text>
+              <Button className="submit-btn" type='submit' variant="outline-info" onClick={() => this.deleteRenewal(renewal._id)}>Delete Renewal</Button>
             </Card.Body>
           </Card>
         </Col>
