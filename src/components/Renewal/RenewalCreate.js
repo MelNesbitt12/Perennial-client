@@ -38,8 +38,6 @@ class RenewalCreate extends Component {
 
   handleCheck = event => {
     event.persist()
-    console.log('event target is:', event.target)
-    console.log('event target value is:', event.target.value)
     this.setState(prevState => {
       const updatedField = { autoRenew: !prevState.renewal.autoRenew }
       const editedRenewal = Object.assign({}, prevState.renewal, updatedField)
@@ -65,8 +63,8 @@ class RenewalCreate extends Component {
       }
     })
       .then(res => {
-        const renewal = res.data.renewals.find((renewal) => {
-          return renewal.name === this.state.renewal.name
+        const renewal = res.data.renewals.find((element) => {
+          return element.name === this.state.renewal.name
         })
         if (renewal) {
           return axios({
@@ -88,6 +86,20 @@ class RenewalCreate extends Component {
           })
         }
       })
+    // axios({
+    //   url: `${apiUrl}/renewals`,
+    //   method: 'POST',
+    //   headers: {
+    //     'Authorization': `Bearer ${this.props.user.token}`
+    //   },
+    //   data: { renewal: this.state.renewal }
+    // })
+    // }
+      // })
+      // })
+      // .then((res) => {
+      //   this.setState({ createdId: res.data.renewal._id })
+      // })
       .then((res) => {
         if (res.status === 201) {
           this.setState({ createdId: res.data.renewal._id })
@@ -95,20 +107,34 @@ class RenewalCreate extends Component {
           this.setState({ updated: true })
         }
       })
-      .catch((error) => {
-        if (error.response.status === 422) {
-          return msgAlert({
-            heading: 'All Fields Required!',
-            message: messages.updateRenewalFailure,
-            variant: 'danger'
+      .then((res) => {
+        if (this.state.updated === true) {
+          msgAlert({
+            heading: 'Success!',
+            message: messages.updateRenewalSuccess,
+            variant: 'success'
+          })
+        } else {
+          msgAlert({
+            heading: 'Success!',
+            message: messages.createRenewalSuccess,
+            variant: 'success'
           })
         }
       })
+      .catch(error => {
+        msgAlert({
+          heading: 'Created Renewal Failed ' + error.message,
+          message: messages.createRenewalFailure,
+          variant: 'danger'
+        })
+      }
+      )
   }
 
   render () {
-    const { createdId, updated } = this.state
-    // const { handleChange, handleSubmit, handleCheck } = this
+    const { createdId, updated, renewal } = this.state
+    const { handleChange, handleSubmit, handleCheck } = this
 
     if (createdId) {
       return <Redirect to={`/renewals/${createdId}`} />
@@ -119,10 +145,10 @@ class RenewalCreate extends Component {
     return (
       <div>
         <RenewalForm
-          renewal={this.state.renewal}
-          handleChange={this.handleChange}
-          handleCheck={this.handleCheck}
-          handleSubmit={this.handleSubmit}
+          renewal={renewal}
+          handleChange={handleChange}
+          handleCheck={handleCheck}
+          handleSubmit={handleSubmit}
           cancelPath='/renewals'
         />
       </div>

@@ -97,7 +97,7 @@ class Renewal extends Component {
     }
 
     if (redirected) {
-      return <Redirect to={{ pathname: '/renewals-create' }} />
+      return <Redirect to={{ pathname: `/renewals/${this.props.match.params.id}/update` }} />
     }
 
     // formatting expiration date

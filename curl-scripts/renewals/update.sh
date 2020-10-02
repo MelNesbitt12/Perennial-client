@@ -3,7 +3,7 @@
 API="http://localhost:4741"
 URL_PATH="/renewals"
 
-curl "${API}${URL_PATH}/${ID}" \
+curl "${API}${URL_PATH}/${ID}/update" \
   --include \
   --request PATCH \
   --header "Content-Type: application/json" \

@@ -13,5 +13,8 @@ export default {
   deleteRenewalFailure: 'Delete Renewal Failed!',
   showRenewalSuccess: 'Here Is Your Renewal!',
   showRenewalFailure: 'Cannot View Your Renewal',
-  updateRenewalFailure: 'Complete the Form Before You Submit'
+  updateRenewalSuccess: 'Your Renewal Has Been Updated!',
+  updateRenewalFailure: 'Complete the Form Before You Submit',
+  createRenewalSuccess: 'Successfully Added Your Renewal',
+  createRenewalFailure: 'Could Not Create Renewal'
 }

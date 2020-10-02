@@ -68,9 +68,6 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/profile' render={() => (
             <Profile user={user} />
           )} />
-          {/* <AuthenticatedRoute user={user} exact path='/how-to' render={() => (
-            <GettingStarted user={user} />
-          )} /> */}
           <AuthenticatedRoute user={user} exact path='/' render={() => (
             <GettingStarted user={user} />
           )} />
@@ -84,7 +81,7 @@ class App extends Component {
             <RenewalCreate user={user} match={match} msgAlert={this.msgAlert}/>
           )} />
           <AuthenticatedRoute user={user} path='/renewals/:id/update' render={({ match }) => (
-            <RenewalUpdate user={user} match={match} msgAlert={this.alert}/>
+            <RenewalUpdate user={user} match={match} msgAlert={this.msgAlert}/>
           )} />
         </main>
       </Fragment>
